@@ -60,15 +60,17 @@ An example implementation of AWX on single node K3s using AWX Operator, with eas
 ### ✅ Prepare CentOS Stream 9 host
 
 Disable firewalld and nm-cloud-setup if enabled. This is [recommended by K3s](https://docs.k3s.io/installation/requirements?os=rhel#operating-systems).
-OR
-firewall-cmd --permanent --add-port=6443/tcp #apiserver
-firewall-cmd --permanent --zone=trusted --add-source=10.42.0.0/16 #pods
-firewall-cmd --permanent --zone=trusted --add-source=10.43.0.0/16 #services
-firewall-cmd --reload
 
 ```bash
 # Disable firewalld
 sudo systemctl disable firewalld --now
+
+OR
+
+firewall-cmd --permanent --add-port=6443/tcp #apiserver
+firewall-cmd --permanent --zone=trusted --add-source=10.42.0.0/16 #pods
+firewall-cmd --permanent --zone=trusted --add-source=10.43.0.0/16 #services
+firewall-cmd --reload
 
 # Disable nm-cloud-setup if exists and enabled
 sudo systemctl disable nm-cloud-setup.service nm-cloud-setup.timer
