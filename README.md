@@ -100,7 +100,7 @@ If you want to use files suitable for a specific version of AWX Operator, [refer
 
 ```bash
 cd ~
-git clone https://github.com/kurokobo/awx-on-k3s.git
+git clone https://github.com/ahmedmorad2512/awx-on-k3s.git
 cd awx-on-k3s
 git checkout 2.19.1+20260320.1
 ```
